@@ -1,0 +1,160 @@
+                       *************************************************  
+                       ************** DB PUSH LOG FILE *****************  
+                       *************************************************  
+                               START TIME: Mon 11/01/2010 - 16:23:25.79                   
+                       ----------------------------------------------------  
+---- Verifying connection to Production Server. ----  
+  
+--- Moving previous DB backups into "olddbBackups" ----  
+C:\DB\dbBackups\so1masterSQL_sept_clean_10-29-2010.bak
+        1 file(s) moved.
+Z:\DBbackups\so1masterSQL_sept_clean_10-29-2010.bak
+        1 file(s) moved.
+Y:\DBbackups\so1masterSQL_sept_clean_10-29-2010.bak
+        1 file(s) moved.
+Transfer Completed.  
+-------------------------------------------------------  
+  
+ 
+-------- Backing up local DB -----------------------  
+PLEASE BE PATIENT THIS PROCESS TAKES APPROX. 5 MINS.  
+Starting the backup  
+Processed 33616 pages for database 'so1mastersql_sept_clean', file 'so1masterSQL_sept_clean' on file 1.
+Processed 5 pages for database 'so1mastersql_sept_clean', file 'so1masterSQL_sept_clean_log' on file 1.
+BACKUP DATABASE successfully processed 33621 pages in 9.663 seconds (27.181 MB/sec).
+DB finished backing up!  
+----------------------------------------------------  
+  
+ 
+-------- Copying Files to Remote Servers-------------  
+Transferring files to Prod.  
+C:\DB\dbBackups\so1masterSQL_sept_clean_11-01-2010.bak
+1 File(s) copied
+  
+  
+Transferring files to TS03.  
+C:\DB\dbBackups\so1masterSQL_sept_clean_11-01-2010.bak
+1 File(s) copied
+DB tranfer completed!  
+----------------------------------------------------  
+  
+  
+--------- Restoring DB on Prod. Server -------  
+  
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+10 percent processed.
+20 percent processed.
+30 percent processed.
+40 percent processed.
+50 percent processed.
+60 percent processed.
+70 percent processed.
+80 percent processed.
+90 percent processed.
+100 percent processed.
+Processed 33616 pages for database 'so1masterSQL_sept_clean', file 'so1masterSQL_sept_clean' on file 1.
+Processed 5 pages for database 'so1masterSQL_sept_clean', file 'so1masterSQL_sept_clean_log' on file 1.
+RESTORE DATABASE successfully processed 33621 pages in 35.759 seconds (7.345 MB/sec).
+DB was Restored On Production.  
+  
+  
+--------- Re-creating Portal user on Prod DB Server -------  
+  
+Changed database context to 'so1masterSQL_sept_clean'.
+Portal user was re-created On Production.  
+  
+  
+--------- Restoring DB on TS03 Server -------  
+  
+10 percent processed.
+20 percent processed.
+30 percent processed.
+40 percent processed.
+50 percent processed.
+60 percent processed.
+70 percent processed.
+80 percent processed.
+90 percent processed.
+100 percent processed.
+Processed 33616 pages for database 'so1masterSQL_sept_clean', file 'so1masterSQL_sept_clean' on file 1.
+Processed 5 pages for database 'so1masterSQL_sept_clean', file 'so1masterSQL_sept_clean_log' on file 1.
+RESTORE DATABASE successfully processed 33621 pages in 153.729 seconds (1.708 MB/sec).
+DB was Restored On TS03.  
+----------------------------------------------------  
+  
+  
+---------------Restarting the portal------------------------ 
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web1 || /sbin/start so1web1
+[so1web@cloud1.schoolofone.net] out: so1web1 start/running, process 11699
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web2 || /sbin/start so1web2
+[so1web@cloud1.schoolofone.net] out: so1web2 start/running, process 11707
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web3 || /sbin/start so1web3
+[so1web@cloud1.schoolofone.net] out: so1web3 start/running, process 11714
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web4 || /sbin/start so1web4
+[so1web@cloud1.schoolofone.net] out: so1web4 start/running, process 11723
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web5 || /sbin/start so1web5
+[so1web@cloud1.schoolofone.net] out: so1web5 start/running, process 11731
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web6 || /sbin/start so1web6
+[so1web@cloud1.schoolofone.net] out: so1web6 start/running, process 11739
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web7 || /sbin/start so1web7
+[so1web@cloud1.schoolofone.net] out: so1web7 start/running, process 11747
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1web8 || /sbin/start so1web8
+[so1web@cloud1.schoolofone.net] out: so1web8 start/running, process 11755
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart so1vendors1 || /sbin/start so1vendors1
+[so1web@cloud1.schoolofone.net] out: so1vendors1 start/running, process 11763
+[so1web@cloud1.schoolofone.net] sudo: /sbin/restart memcached-data
+[so1web@cloud1.schoolofone.net] out: memcached-data start/running, process 11765
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web1 || /sbin/start so1web1
+[so1web@cloud2.schoolofone.net] out: so1web1 start/running, process 7999
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web2 || /sbin/start so1web2
+[so1web@cloud2.schoolofone.net] out: so1web2 start/running, process 8003
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web3 || /sbin/start so1web3
+[so1web@cloud2.schoolofone.net] out: so1web3 start/running, process 8007
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web4 || /sbin/start so1web4
+[so1web@cloud2.schoolofone.net] out: so1web4 start/running, process 8019
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web5 || /sbin/start so1web5
+[so1web@cloud2.schoolofone.net] out: so1web5 start/running, process 8031
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web6 || /sbin/start so1web6
+[so1web@cloud2.schoolofone.net] out: so1web6 start/running, process 8039
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web7 || /sbin/start so1web7
+[so1web@cloud2.schoolofone.net] out: so1web7 start/running, process 8047
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1web8 || /sbin/start so1web8
+[so1web@cloud2.schoolofone.net] out: so1web8 start/running, process 8051
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart so1vendors1 || /sbin/start so1vendors1
+[so1web@cloud2.schoolofone.net] out: so1vendors1 start/running, process 8063
+[so1web@cloud2.schoolofone.net] sudo: /sbin/restart memcached-data
+[so1web@cloud2.schoolofone.net] out: memcached-data start/running, process 8065
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web1 || /sbin/start so1web1
+[so1web@cloud0.schoolofone.net] out: so1web1 start/running, process 22762
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web2 || /sbin/start so1web2
+[so1web@cloud0.schoolofone.net] out: so1web2 start/running, process 22766
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web3 || /sbin/start so1web3
+[so1web@cloud0.schoolofone.net] out: so1web3 start/running, process 22770
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web4 || /sbin/start so1web4
+[so1web@cloud0.schoolofone.net] out: so1web4 start/running, process 22785
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web5 || /sbin/start so1web5
+[so1web@cloud0.schoolofone.net] out: so1web5 start/running, process 22794
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web6 || /sbin/start so1web6
+[so1web@cloud0.schoolofone.net] out: so1web6 start/running, process 22802
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web7 || /sbin/start so1web7
+[so1web@cloud0.schoolofone.net] out: so1web7 start/running, process 22806
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1web8 || /sbin/start so1web8
+[so1web@cloud0.schoolofone.net] out: so1web8 start/running, process 22818
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart so1vendors1 || /sbin/start so1vendors1
+[so1web@cloud0.schoolofone.net] out: so1vendors1 start/running, process 22824
+[so1web@cloud0.schoolofone.net] sudo: /sbin/restart memcached-data
+[so1web@cloud0.schoolofone.net] out: memcached-data start/running, process 22828
+
+Done.
+Disconnecting from so1web@cloud2.schoolofone.net... done.
+Disconnecting from so1web@cloud1.schoolofone.net... done.
+Disconnecting from so1web@cloud0.schoolofone.net... done.
+------------------------------------------------------------ 
+  
+  
+----------------------------------------------------- 
+                       **************************************************** 
+                       *****************  END OF LOG FILE ***************** 
+                       **************************************************** 
+                               END TIME: Mon 11/01/2010 - 16:30:14.17                    
+                       ---------------------------------------------------- 
